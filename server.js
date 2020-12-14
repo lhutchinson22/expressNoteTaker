@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // ROUTER
-// require("./Develop/routes/apiRoutes")(app);
+require("./Develop/routes/apiRoutes")(app);
 require("./Develop/routes/htmlRoutes")(app);
 
 // LISTENER
