@@ -36,4 +36,21 @@ router.post("/notes", (req, res) => {
   });
 });
 
+router.delete("/notes/:id", (req, res) => {
+  const frontId = req.params.id;
+
+  console.log(frontId);
+
+  fs.readFile(db, "utf8", (err, data) => {
+    if (err) throw err;
+    const allData = JSON.parse(data);
+    const keepData = allData.filter((note) => note.id != frontId);
+
+    fs.writeFile(db, JSON.stringify(keepData), (err) => {
+      if (err) throw err;
+      res.json({ msg: "Note deleted" });
+    });
+  });
+});
+
 module.exports = router;
