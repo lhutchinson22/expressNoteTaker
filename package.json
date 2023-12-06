@@ -19,6 +19,6 @@
   "homepage": "https://github.com/lhutchinson22/expressNoteTaker#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "nanoid": "^3.1.20"
+    "nanoid": "^3.1.31"
   }
 }
